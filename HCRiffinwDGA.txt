@@ -1,0 +1,47 @@
+Công tác phát triển HCriffin branch DGA = SELKS + bundled DGA 
+
+•  Sửa đổi compose name từ SELKS thành hcriffinwdga
+sed -i “s|container_name: SELKS_DGA|container_name: HCRiffinwDGA|g” docker-compose.yml
+
+•  Build lại các image docker lên docker hub cá nhân
+docker build -t HCRiffinwDGA . 
+docker login
+docker push 1642001/ hcriffinwdga
+
+•  Sửa lại tên và logo Stamus + Scirius
+containers-data/html/:/opt/scirius/rules/
+ 
+•  Sửa lại nội dung các panel giới thiệu Stamus SELKS cho phù hợp, tuy nhiên vẫn phải giữ lại 1 phần nội dung của SELKS và tên tác giá cho đúng với License GPLv3
+containers-data/html/:/opt/scirius/rules/
+
+•  Tắt lưu file pcap
+Sửa pcap-log enable thành no trong file ./containers-data/suricata/etc/selks6-addin.yaml
+•  Build lại thàn 1 file compose hoàn chỉnh, docker-compose up là chạy
+
+•  Cấu hình tự động retention log ( khi disk đầy phải tự xoá log cũ)
+
+curl -X PUT "http://localhost:9200/_ilm/policy/cleanup_policy?pretty" \
+     -H 'Content-Type: application/json' \
+     -d '{
+      "policy": {                       
+        "phases": {
+          "delete": {
+            "min_age": "30d",           
+            "actions": { "delete": {} }
+          }
+        }
+      }
+    }'
+
+
+curl -X PUT "http://localhost:9200/logstash-*/_settings?pretty" \
+     -H 'Content-Type: application/json' \
+     -d '{ "lifecycle.name": "cleanup_policy" }'
+
+
+curl -X PUT "http://localhost:9200/_template/logging_policy_template?pretty" \
+     -H 'Content-Type: application/json' \
+     -d '{
+      "index_patterns": ["logstash-*"],                 
+      "settings": { "index.lifecycle.name": "cleanup_policy" }
+    }'

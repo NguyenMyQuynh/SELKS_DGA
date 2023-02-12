@@ -1,0 +1,65 @@
+{% extends "rules/base.html" %}
+{% load bootstrap3  %}
+{% block sidebar %}
+    <div class="panel-heading">
+        <h2 class="panel-title">Policies & Filter Sets</h2>
+    </div>
+    <ul class="panel-body">
+        <li>Import to and export from Hunting</li>
+    </ul>
+{% endblock %}
+{% block content %}
+    <form class="form"
+          enctype="multipart/form-data"
+          action="{% url 'policies' %}"
+          method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-5">
+                <h2>Export Policies and custom Filter Sets from Hunting</h2>
+                <p class="help-block">
+                    Clicking on the button will download policies and filtersets.
+                </p>
+                {% buttons %}
+                    <button type="submit" name="export" class="btn btn-primary">{% bootstrap_icon "download" %} Export</button>
+                {% endbuttons %}
+                {% if perms.rules.configuration_edit %}
+                    <br>
+                    <h2>Import Policies and custom Filter Sets to Hunting</h2>
+                    <div class="form-group">
+                        <label class="sr-only control-label" for="id_file">File</label>
+                        <div class="row bootstrap3-multi-input" disabled="">
+                            <div class="col-xs-12">
+                                <p>
+                                    <input type="file" name="file" class="" title="" id="id_file">
+                                </p>
+                                <input type="checkbox" id="delete_policies" name="delete">
+                                <label for="delete_policies">Delete all previous imported policies and filtersets</label>
+                                <br>
+                                <p class="help-block" id="help-delete" style="display: none">
+                                    <strong>WARNING:</strong>
+                                    <a>Delete all previously imported policies and custom Filter Sets.</a><br>
+                                    <a>All previously imported policies and custom filter sets will be deleted.</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% buttons %}
+                        <button type="submit" name="import" class="btn btn-warning">{% bootstrap_icon "upload" %} Import</button>
+                    {% endbuttons %}
+                {% endif %}
+            </div>
+        </div>
+    </form>
+    <script>
+$(document).ready(function() {
+    $("#delete_policies").click(function() {
+        if ($("#delete_policies").is(":checked")) {
+            $("#help-delete").show();
+        } else {
+            $("#help-delete").hide();
+        }
+    })
+});
+    </script>
+{% endblock content %}

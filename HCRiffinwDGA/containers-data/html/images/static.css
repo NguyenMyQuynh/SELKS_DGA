@@ -1,0 +1,441 @@
+ul li span.type {
+    color: #585858;
+}
+
+div.table-container {
+    width: 100%;
+}
+
+table.paleblue {
+    width: 100%;
+}
+
+/*
+td.msg {
+    width: 100%;
+}
+*/
+
+body {
+    background: white;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 5px;
+}
+
+.title {
+    color: #005792;
+}
+
+#footer p {
+    margin-top: 2em;
+    border-top-color: #005792;
+}
+
+a {
+    color: #585858;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+table.paleblue a:link {
+    color: grey;
+}
+
+table.paleblue a:visited {
+    font-weight: normal; 
+    color: grey;
+}
+
+table.paleblue tr.odd {
+    background-color: #f0f0f0;
+}
+
+table.paleblue tr.even {
+    background-color: #e0e0e0;
+}
+
+table.paleblue + ul.pagination > li > a {
+    color: grey;
+}
+
+#logo img {
+    padding-top: 7px;
+    margin-left: -8px;
+}
+
+#logo span {
+    margin-top: 10px;
+}
+
+table.update {
+    border-collapse: collapse;
+    margin: 20px;
+    width: 20em;
+}
+
+table.update tr {
+    border: solid 1px #AD9C9B;
+}
+
+table.update tr.header {
+    background-color: #005792;
+    font-weight: bold;
+    color: white;
+}
+
+table.update tr td, table.update tr th {
+    padding: 5px;
+}
+
+table.update td.action_selection {
+    text-align: center;
+    vertical-align:middle;
+}
+
+table.update tr td.check {
+    border: solid 1px #AD9C9B;
+}
+
+table.update thead th.check {
+    border: solid 1px #AD9C9B;
+}
+
+div#update {
+    width: 30em;
+}
+
+div#update input[type="submit"] {
+    text-align: right;
+    margin-top: 10px;
+}
+
+td.suppressed {
+    text-decoration: line-through;
+}
+
+#logo h1 {
+    font-size: 2em;
+    text-transform: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+#logo img {
+    padding-left: 5px;
+}
+
+div#menu {
+    margin-left: 45px;
+    margin-top: 3px;
+    height: 34px;
+    width: 905px;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #005792;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h2.panel-title {
+    color: #005792;
+}
+
+#sidebar ul {
+    margin-bottom: 10px;
+}
+
+#sidebar ul a {
+    padding-left: 0em;
+}
+
+#sidebar div.panel-text {
+    padding-left: 1em;
+}
+
+
+#sidebar h2 a {
+    padding-left: 0px;
+}
+
+#sidebar div.sidebar-text {
+    padding-left: 10px;
+}
+
+#sidebar ul li {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+div#status ul {
+    padding-left: 20px;
+    margin-left: 0px;
+    list-style-type: circle;
+    font-weight: normal;
+}
+
+div#status ul li {
+    margin-left: 0px;
+}
+
+.msg {
+    cursor: row-resize;
+}
+
+div.highlight pre{
+    white-space: pre-wrap;
+}
+
+div.highlight span.kt {
+    color: #005792;
+    font-weight: bold;
+}
+
+div.highlight span.k {
+    color: #005792;
+    font-weight: bold;
+}
+
+div.highlight span.err {
+    color: #005792;
+    font-style: italic;
+}
+
+div.highlight span.nv {
+    color: #AD9C9B;
+}
+
+div.highlight span.na {
+    color: #0d7218;
+    font-style: italic;
+}
+
+
+input[type="text"]#id_search {
+    width: 10em;
+    margin-right: 1em;
+}
+
+div#id_search {
+    color: white;
+    padding-top: 3px;
+}
+
+ul.pagination {
+    width: 100%;
+}
+
+a#logo {
+    padding: -5px;
+}
+
+div.dropdown-menu li {
+   padding-right: 5px;
+}
+
+ul.dropdown-menu li {
+   padding-right: 5px;
+}
+
+a#display_menu img {
+   margin-bottom: 5px;
+}
+
+div.status p {
+   padding-left: 10px;
+}
+
+button a {
+   color: white;
+}
+
+button a:hover {
+   color: white;
+}
+
+#sciriuslogo {
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+
+#login form {
+   margin: 10px;
+}
+
+#sidebar .breadcrumb {
+   margin-bottom: 0px;
+   background-color: white;
+}
+
+div.tab-content {
+   margin-top: 10px;
+   margin-left: 5px;
+}
+
+div.panel-body {
+    padding: 5px 5px 5px 15px;
+}
+
+div.label a {
+    color: white;
+    padding-left: 0em;
+}
+
+#sidebar div.label a {
+    padding-left: 0em;
+}
+
+tr.overed {
+   background-color: rgb(113, 159, 202) !important;
+   font-color: black !important;
+}
+
+/* Added for d3js */
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #247dca;
+  stroke-width: 1px;
+}
+
+.node--leaf {
+  fill: white;
+}
+
+.d3-label {
+  font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  font-weight: bold;
+  /* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff; */
+}
+
+.d3-label,
+{
+  pointer-events: none;
+}
+
+#circles path {
+  stroke: #fff;
+  fill-rule: evenodd;
+}
+
+#circles {
+  height: 325px;
+  margin-top: 30px;
+}
+
+#circles svg {
+    margin-left: auto;
+    margin-right: auto;
+    height: 320px;
+}
+
+div.panel-content ul {
+    margin-top: 3px;
+}
+
+div.panel-content ul li span.pull-right {
+    margin-right: 20px;
+}
+
+div.status ul li span.pull-right {
+    margin-right: 20px;
+}
+
+.svgcenter {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+    font-size: 120%;
+}
+
+.category {
+    min-width: 12em;
+}
+
+.jumbotron p.minor {
+	font-size: 100%;
+}
+
+.jumbotron p.lead {
+	font-size: 120%;
+}
+
+.jumbotron {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
+.alert-trends-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.alert-trends-box {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  border-radius: 3px;
+  line-height: 60px;
+  height: 60px;
+}
+
+.alert-trends-box span {
+  font-size: 125%;
+}
+
+.comment {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.updated_date {
+  width: 12em;
+}
+
+div#highlight_info {
+  height: 200px;
+  padding: 5px;
+}
+
+.navbar .container, .navbar .container-fluid, .navbar .container-lg, .navbar .container-md, .navbar .container-sm, .navbar .container-xl {
+    display: block;
+    -ms-flex-wrap: initial;
+    flex-wrap: nowrap;
+    -ms-flex-align: center;
+    align-items: normal;
+    -ms-flex-pack: initial;
+    justify-content: normal;
+}
+.navbar-nav {
+    display: block;;
+    flex-direction: unset;
+}
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}

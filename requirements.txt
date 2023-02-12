@@ -1,0 +1,7 @@
+numpy
+tensorflow
+flask
+flask_restful
+elasticsearch
+thehive4py
+python-telegram-bot
